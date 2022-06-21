@@ -43,7 +43,7 @@ ROOT_URLCONF = 'lista_animes.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['anime/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
