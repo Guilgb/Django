@@ -1,8 +1,5 @@
 {% extends 'base.html' %}
 {% load static %}
     {% block content %}
-
-        <h3> <a href="{% url 'list' %}"> Lista </a> </h3>
-        <h3> <a href="{% url 'form' %}"> Formulario </a> </h3>
-    
+        {% include 'partials/_navbar.html' %}
     {% endblock %}
