@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 
 # Create your views here.
 
@@ -8,7 +8,11 @@ def home(request):
 
 
 def form(request):
-    return render(request, 'animes/form.html')
+    if request.method == 'POST':
+        print('form preechido com sucesso')
+        return redirect('list')
+    else:
+        return render(request, 'animes/form.html')
 
 
 def save(request):

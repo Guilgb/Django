@@ -2,17 +2,17 @@
 {% load static %}
 
     {% block content %}
-    <form class="row g-3 needs-validation" novalidate action="/animes/save" method="post">
+    <form class="row g-3 needs-validation" novalidate action="{% url 'form' %}" method="post">{% csrf_token %}
         <div class="col-md-4">
-            <label for="validationCustom01" class="form-label">Nome:</label>
-            <input type="text" class="form-control" id="validationCustom01" value="One Piece" required>
+            <label for="nome" class="form-label">Nome:</label>
+            <input type="text" class="form-control" id="nome" value="Anime" required>
             <div class="valid-feedback">
               Looks good!
         </div>
 
         <div class="col-1-4">
-            <label for="validationCustom01" class="form-label">Lançamento:</label>
-            <input type="text" class="form-control" id="validationCustom01" value="1993" required>
+            <label for="lancamento" class="form-label">Lançamento:</label>
+            <input type="text" class="form-control" id="lancamento" value="1993" required>
             <div class="valid-feedback">
               Looks good!
         </div>
