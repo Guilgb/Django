@@ -5,21 +5,21 @@
     <form class="row g-3 needs-validation" novalidate action="{% url 'form' %}" method="post">{% csrf_token %}
         <div class="col-md-4">
             <label for="nome" class="form-label">Nome:</label>
-            <input type="text" class="form-control" id="nome" value="Anime" required>
+            <input type="text" class="form-control" name="nome" value="Anime" required>
             <div class="valid-feedback">
               Looks good!
         </div>
 
         <div class="col-1-4">
-            <label for="lancamento" class="form-label">Lançamento:</label>
-            <input type="text" class="form-control" id="lancamento" value="1993" required>
+            <label for="dataLancamento" class="form-label">Lançamento:</label>
+            <input type="text" class="form-control" name="dataLancamento" value="1993" required>
             <div class="valid-feedback">
               Looks good!
         </div>
 
         <div class="col-2-4">
-            <label for="validationCustom01" class="form-label">Produtora:</label>
-            <input type="text" class="form-control" id="validationCustom01" value="Shonen Jump" required>
+            <label for="produtora" class="form-label">Produtora:</label>
+            <input type="text" class="form-control" name="produtora" value="Shonen Jump" required>
             <div class="valid-feedback">
               Looks good!
         </div>

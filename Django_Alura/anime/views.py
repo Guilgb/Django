@@ -1,4 +1,6 @@
 from django.shortcuts import redirect, render
+from requests import request
+from .models import Animes
 
 # Create your views here.
 
@@ -9,7 +11,12 @@ def home(request):
 
 def form(request):
     if request.method == 'POST':
-        print('form preechido com sucesso')
+        nome = request.POST['nome']
+        produtora = request.POST['produtora']
+        dataLancamento = request.POST['dataLancamento']
+        anime = Animes.objects.create(nome=nome, produtora=produtora,
+                                      dataLancamento=dataLancamento)
+        anime.save()
         return redirect('list')
     else:
         return render(request, 'animes/form.html')
@@ -20,4 +27,15 @@ def save(request):
 
 
 def list(request):
-    return render(request, 'animes/list.html')
+    animes = Animes.objects.all()
+    dados = {
+        'animes': animes
+    }
+    return render(request, 'animes/list.html', dados)
+
+
+def delete(request, id):
+    animes = Animes.objects.get(pk=id)
+    if request.method == 'POST':
+        animes.delete()
+    return render(request, 'animes/delete.html', )

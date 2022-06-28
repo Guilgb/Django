@@ -7,7 +7,7 @@ class Animes(models.Model):
     idAnime = models.AutoField(primary_key=True)
     nome = models.CharField(max_length=255)
     produtora = models.CharField(max_length=255)
-    dataLancamento = models.DateTimeField()
+    dataLancamento = models.CharField(max_length=255)
 
     def __str__(self) -> str:
         return self.nomeAnime

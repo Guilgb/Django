@@ -10,14 +10,16 @@
             </tr>
         </thead>
         <tbody>
-            <tr th:each="anime : ${listarAnime}">
-                <td th:text="${anime.nome}"> </td>
-                <td th:text="${anime.lancamento}"> </td>
-                <td th:text="${anime.produtora}"> </td>
-                <td sec:authorize="hasRole('ROLE_ADMIN')"> <a th:href="@{delete/{id}(id = ${anime.id})}"> <button type="button" class="btn btn-danger">Excluir</button></a></td>
-                <td> <a class="btn btn-primary" th:href="@{update/{id}(id = ${anime.id})}"> Atualizar </a> </td>
-                <td> <img width="20" height="20" src="@{'/images/' + ${anime.nome} + .png}" alt=""> </td>
+            {% for anime in animes %}
+            <tr>
+                <td> {{ anime.nome }} </td>
+                <td> {{ anime.dataLancamento }} </td>
+                <td> {{ anime.produtora }}</td>
+                <td sec:authorize="hasRole('ROLE_ADMIN')"> <a href="{% url 'delete' %}{{anime.idAnime}}"> <button type="button" class="btn btn-danger">Excluir</button></a></td>
+                <td> <a class="btn btn-primary"> Atualizar </a> </td>
+                <td> <img width="20" height="20" src="" alt=""> </td>
             </tr>
+            {% endfor %}
         </tbody>
     </table>
     {% endblock%}
