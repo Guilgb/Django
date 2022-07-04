@@ -14,12 +14,14 @@
             <tr>
                 <td> {{ anime.nome }} </td>
                 <td> {{ anime.dataLancamento }} </td>
-                <td> {{ anime.produtora }}</td>
-                <td sec:authorize="hasRole('ROLE_ADMIN')"> <a href="{% url 'delete' %}{{anime.idAnime}}"> <button type="button" class="btn btn-danger">Excluir</button></a></td>
+                <td> {{ anime.produtora }} </td>
+                {% if animes %}
+                <td sec:authorize="hasRole('ROLE_ADMIN')"> <a href="">  <button type="button" class="btn btn-danger"> Delete </button> </a> </td>
+                {% endif %}
                 <td> <a class="btn btn-primary"> Atualizar </a> </td>
                 <td> <img width="20" height="20" src="" alt=""> </td>
-            </tr>
             {% endfor %}
+            </tr>
         </tbody>
     </table>
     {% endblock%}

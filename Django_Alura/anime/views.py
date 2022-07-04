@@ -28,14 +28,13 @@ def save(request):
 
 def list(request):
     animes = Animes.objects.all()
-    dados = {
-        'animes': animes
-    }
-    return render(request, 'animes/list.html', dados)
+    return render(request, 'animes/list.html', {'animes': animes})
 
 
 def delete(request, id):
-    animes = Animes.objects.get(pk=id)
+    animes = Animes.objects.get(id=id)
     if request.method == 'POST':
         animes.delete()
-    return render(request, 'animes/delete.html', )
+        return redirect('animes/list.html')
+
+    return render(request, 'animes/delete.html', {'animes': animes})
