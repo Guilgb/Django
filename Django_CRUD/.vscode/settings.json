@@ -1,0 +1,54 @@
+{
+    "java.debug.settings.console": "internalConsole",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "sync.forceUpload": true,
+    "sync.autoUpload": true,
+    "sync.forceDownload": true,
+    "files.autoSave": "afterDelay",
+    "python.pythonPath": "venv/bin/python",
+    "workbench.colorTheme": "Dracula",
+    "code-runner.clearPreviousOutput": true,
+    "workbench.iconTheme": "material-icon-theme",
+    "code-runner.ignoreSelection": true,
+    "code-runner.runInTerminal": true,
+    "code-runner.defaultLanguage": "pt-br",
+    "python.linting.mypyEnabled": true,
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Args": [
+        "--ignore E051,E902",
+        
+    ],
+    "python.linting.mypyArgs": [
+        "--follow-imports=silent",
+        "--ignore-missing-imports",
+        "--show-column-numbers",
+        "--no-pretty"
+    ],
+    "python.testing.unittestEnabled": false,
+    "[python]": {
+        "editor.formatOnSave": true
+    },
+    "bracketPairColorizer.depreciation-notice": false,
+    "mypy.runUsingActiveInterpreter": true,
+    "editor.detectIndentation": false,
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "workbench.editor.untitled.hint": "hidden",
+    "git.enableSmartCommit": true,
+    "editor.wordWrap": "on",
+    "task.slowProviderWarning": true,
+    "settingsSync.ignoredExtensions": [
+        "vscode.microsoft-authentication"
+    ],
+    "redhat.telemetry.enabled": true,
+    "java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx1G -Xms100m -javaagent:\"/home/guilherme/.vscode/extensions/gabrielbb.vscode-lombok-1.0.1/server/lombok.jar\"",
+    "window.zoomLevel": -1,
+
+}
